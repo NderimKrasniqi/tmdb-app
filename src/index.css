@@ -1,0 +1,32 @@
+:root {
+  --clr-primary: #222c2a;
+  --clr-secondary: #f3eed9;
+  --clr-accent: #824936;
+  font-size: 16px;
+  --ff-primary: 'Roboto', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.6;
+  font-family: var(--ff-primary);
+  background-color: #22222e;
+}
+nav {
+  background-color: #151419;
+}
+
+p {
+  color: #ffff;
+  font-size: 0.8125rem;
+}
+main {
+  padding: 3rem 0;
+}

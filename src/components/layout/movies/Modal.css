@@ -1,0 +1,169 @@
+/* The Modal (background) */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.767);
+  transition: all 0.4s;
+}
+
+.modal_frame {
+  border-radius: 10px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.336);
+}
+.modal_image > img {
+  width: 250px;
+  height: 100%;
+  border-radius: 5px;
+  display: block;
+}
+.modal_details {
+  display: flex;
+  padding-top: 5px;
+  flex-direction: column;
+  font-size: 1rem;
+}
+.modal__title > h1 {
+  text-decoration: underline;
+  text-decoration-color: #1e1f20;
+  color: #1e1f20;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+.modal__genres {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+.modal__genres > p {
+  padding-inline: 5px;
+  margin-top: 2px;
+  color: #f5f5f5;
+  font-size: 10px;
+  font-weight: 100;
+  margin-right: 4px;
+  background-color: #2d2e30;
+  border-radius: 2px;
+}
+
+.fa-star {
+  margin-right: 4px;
+  color: yellow;
+}
+
+.modal__summary {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.modal__summary__title {
+  color: #1e1f20;
+  font-weight: 700;
+}
+.modal__summary__text {
+  font-size: 13px;
+  color: #f5f5f5;
+  font-weight: 100;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  padding-inline: 10px;
+  max-width: 600px;
+  max-height: auto;
+}
+.split > * {
+  flex-basis: 100%;
+}
+@media (max-width: 575px) {
+  .split {
+    flex-direction: column;
+  }
+  .modal_image > img {
+    width: 250px;
+    height: 100%;
+    margin-inline: auto;
+    border-radius: 5px;
+    display: block;
+  }
+}
+
+/*EXIT BUTTON*/
+.outer {
+  position: relative;
+  margin-left: 20px;
+  width: 35px;
+  cursor: pointer;
+}
+
+.inner {
+  width: inherit;
+  text-align: center;
+}
+
+label {
+  font-size: 0.75em;
+  line-height: 2em;
+  text-transform: uppercase;
+  color: #f5f5f5;
+  transition: all 0.1s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+.modal__buttons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  cursor: pointer;
+  color: #f55e5e;
+}
+
+.inner:before,
+.inner:after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: inherit;
+  background: #1e1f20;
+  left: 0;
+  transition: all 0.3s ease-in;
+}
+
+.inner:before {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.inner:after {
+  bottom: 50%;
+  transform: rotate(-45deg);
+}
+
+.outer:hover label {
+  opacity: 1;
+}
+
+.outer:hover .inner:before,
+.outer:hover .inner:after {
+  transform: rotate(0);
+}
+
+.outer:hover .inner:before {
+  top: 0;
+}
+
+.outer:hover .inner:after {
+  bottom: 0;
+}

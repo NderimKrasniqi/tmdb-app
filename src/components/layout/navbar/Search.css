@@ -1,0 +1,25 @@
+.search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding-inline: 15px;
+}
+
+.search input {
+  padding: 7px;
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 500px;
+  min-width: 250px;
+  background: #f1f1f1;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}

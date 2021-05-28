@@ -1,0 +1,5 @@
+.container {
+  width: min(95%, 90rem);
+  margin-inline: auto;
+  background-color: #22222e;
+}
