@@ -13,7 +13,6 @@ import {
   CLEAR_SEARCH,
   GET_CURRENT,
 } from '../types';
-console.log(process.env);
 const TmdbState = (props) => {
   const favoritsInLocal = localStorage.getItem('favorits');
 

@@ -3,6 +3,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import TmdbContext from '../../../context/tmdb/tmdbContext';
+import floatToDouble from '../../../utils/utils';
 import './Modal.css';
 
 const Modal = ({ item }) => {
@@ -44,33 +45,33 @@ const Modal = ({ item }) => {
   };
 
   return (
-    <div className='modal'>
-      <div className='modal_frame'>
-        <div className='split'>
-          <div className='modal_image'>
+    <div className="modal">
+      <div className="modal_frame">
+        <div className="split">
+          <div className="modal_image">
             <img
               src={
                 `https://image.tmdb.org/t/p/w342/${item.poster_path}` ||
                 'https://via.placeholder.com/150'
               }
-              alt='No poster'
+              alt="No poster"
             />
           </div>
-          <div className='modal_details'>
-            <div className='modal__title'>
+          <div className="modal_details">
+            <div className="modal__title">
               <h1>{item.title || item.name}</h1>
             </div>
-            <div className='modal__genres'>
+            <div className="modal__genres">
               <p>
-                <i className='fas fa-star'></i>
-                {vote_average}
+                <i className="fas fa-star"></i>
+                {floatToDouble(vote_average)}
               </p>
               {genres.map((g) => (
                 <p key={g.id}>{g.name}</p>
               ))}
             </div>
             {item.media_type === 'tv' ? (
-              <div className='modal__genres'>
+              <div className="modal__genres">
                 <p>{`Last: ${last_air_date}`}</p>
 
                 <p>{`Next: ${
@@ -81,24 +82,24 @@ const Modal = ({ item }) => {
                 <p>{`Status: ${status}`}</p>
               </div>
             ) : (
-              <div className='modal__genres'>
+              <div className="modal__genres">
                 <p>{`Release: ${release_date}`}</p>
                 <p>{`Status: ${status}`}</p>
               </div>
             )}
-            <div className='modal__summary'>
-              <p className='modal__summary__title'>Plot Summary:</p>
-              <p className='modal__summary__text'>{`${summary}`}</p>
+            <div className="modal__summary">
+              <p className="modal__summary__title">Plot Summary:</p>
+              <p className="modal__summary__text">{`${summary}`}</p>
             </div>
-            <div className='modal__buttons'>
+            <div className="modal__buttons">
               {item.isFavorit ? (
-                <FavoriteIcon fontSize='large' onClick={handleRemove} />
+                <FavoriteIcon fontSize="large" onClick={handleRemove} />
               ) : (
-                <FavoriteBorderIcon fontSize='large' onClick={handleAdd} />
+                <FavoriteBorderIcon fontSize="large" onClick={handleAdd} />
               )}
 
-              <div className='outer'>
-                <div className='inner'>
+              <div className="outer">
+                <div className="inner">
                   <label onClick={clearModal}>Back</label>
                 </div>
               </div>

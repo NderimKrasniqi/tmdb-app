@@ -15,9 +15,9 @@ const CardList = ({ data }) => {
     return <Spinner />;
   }
   return (
-    <div className='cardlist'>
+    <div className="cardlist">
       {data.map((item) => (
-        <CardItem key={item.id} item={item} />
+        <CardItem key={console.log(item.id)} item={item} />
       ))}
     </div>
   );
